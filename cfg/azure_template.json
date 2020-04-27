@@ -4,21 +4,21 @@
     "parameters": {
         "resourceName": {
             "type": "string",
-			"defaultValue": "IgniteCluster",
+            "defaultValue": "IgniteCluster",
             "metadata": {
                 "description": "The name of the Managed Cluster resource."
             }
         },
         "location": {
             "type": "string",
-			"defaultValue": "westus",
+            "defaultValue": "westus",
             "metadata": {
                 "description": "The location of AKS resource."
             }
         },
         "dnsPrefix": {
             "type": "string",
-			"defaultvValue": "IgniteCluster-dns",
+            "defaultValue": "IgniteCluster_dns",
             "metadata": {
                 "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
@@ -38,6 +38,18 @@
             "metadata": {
                 "description": "The size of the Virtual Machine."
             }
+        },
+        "servicePrincipalClientId": {
+            "metadata": {
+                "description": "Client ID (used by cloudprovider)."
+            },
+            "type": "securestring"
+        },
+        "servicePrincipalClientSecret": {
+            "metadata": {
+                "description": "The Service Principal Client Secret."
+            },
+            "type": "securestring"
         },
         "osType": {
             "type": "string",
@@ -62,7 +74,7 @@
                 "azure",
                 "kubenet"
             ],
-			"defaultValue": "kubenet",
+            "defaultValue": "kubenet",
             "metadata": {
                 "description": "Network plugin used for building Kubernetes network."
             }
@@ -74,11 +86,73 @@
                 "description": "Boolean flag to turn on and off of RBAC."
             }
         },
+        "windowsProfile": {
+            "type": "bool",
+            "defaultValue": false,
+            "metadata": {
+                "description": "Boolean flag to turn on and off of VM scale sets"
+            }
+        },
+        "enablePrivateCluster": {
+            "type": "bool",
+            "defaultValue": false,
+            "metadata": {
+                "description": "Enable private network access to the Kubernetes cluster."
+            }
+        },
+        "aadSessionKey": {
+            "type": "securestring",
+            "defaultValue": null
+        },
         "enableHttpApplicationRouting": {
             "type": "bool",
             "defaultValue": false,
             "metadata": {
                 "description": "Boolean flag to turn on and off of http application routing."
+            }
+        },
+        "enableOmsAgent": {
+            "type": "bool",
+            "defaultValue": true,
+            "metadata": {
+                "description": "Boolean flag to turn on and off of omsagent addon."
+            }
+        },
+        "workspaceRegion": {
+            "type": "string",
+            "defaultValue": "West US",
+            "metadata": {
+                "description": "Specify the region for your OMS workspace."
+            }
+        },
+        "workspaceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Specify the name of the OMS workspace."
+            }
+        },
+        "omsWorkspaceId": {
+            "type": "string",
+            "metadata": {
+                "description": "Specify the resource id of the OMS workspace."
+            }
+        },
+        "omsSku": {
+            "type": "string",
+            "defaultValue": "standalone",
+            "allowedValues": [
+                "free",
+                "standalone",
+                "pernode"
+            ],
+            "metadata": {
+                "description": "Select the SKU for your workspace."
+            }
+        },
+        "principalId": {
+            "type": "string",
+            "metadata": {
+                "description": "The objectId of service principal."
             }
         }
     },
