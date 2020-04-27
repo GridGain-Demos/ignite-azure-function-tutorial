@@ -40,9 +40,9 @@ spec:
             - name: OPTION_LIBS
               value: ignite-kubernetes,ignite-rest-http
             - name: CONFIG_URI
-              value: https://raw.githubusercontent.com/gridgain/demos/ignite-azure-function-demo/ignite-azure-function-demo/cfg/ignite-cfg.xml
+              value: https://raw.githubusercontent.com/GridGain-Demos/ignite-azure-function-tutorial/master/cfg/ignite-cfg.xml
             - name: EXTERNAL_LIBS
-              value: https://raw.githubusercontent.com/gridgain/demos/ignite-azure-function-demo/ignite-azure-function-demo/lib/ignite-azure-function-demo-1.0-SNAPSHOT.jar
+              value: https://raw.githubusercontent.com/GridGain-Demos/ignite-azure-function-tutorial/master/lib/ignite-azure-function-demo-1.0-SNAPSHOT.jar
           ports:
             # Ports to open.
             # Might be optional depending on your Kubernetes environment.
