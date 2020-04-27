@@ -4,34 +4,28 @@
     "parameters": {
         "resourceName": {
             "type": "string",
+			"defaultValue": "IgniteCluster",
             "metadata": {
                 "description": "The name of the Managed Cluster resource."
             }
         },
         "location": {
             "type": "string",
+			"defaultValue": "westus",
             "metadata": {
                 "description": "The location of AKS resource."
             }
         },
         "dnsPrefix": {
             "type": "string",
+			"defaultvValue": "IgniteCluster-dns",
             "metadata": {
                 "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
             }
         },
-        "osDiskSizeGB": {
-            "type": "int",
-            "defaultValue": 0,
-            "metadata": {
-                "description": "Disk size (in GiB) to provision for each of the agent pool nodes. This value ranges from 0 to 1023. Specifying 0 will apply the default disk size for that agentVMSize."
-            },
-            "minValue": 0,
-            "maxValue": 1023
-        },
         "agentCount": {
             "type": "int",
-            "defaultValue": 3,
+            "defaultValue": 2,
             "metadata": {
                 "description": "The number of agent nodes for the cluster."
             },
@@ -44,18 +38,6 @@
             "metadata": {
                 "description": "The size of the Virtual Machine."
             }
-        },
-        "servicePrincipalClientId": {
-            "metadata": {
-                "description": "Client ID (used by cloudprovider)."
-            },
-            "type": "securestring"
-        },
-        "servicePrincipalClientSecret": {
-            "metadata": {
-                "description": "The Service Principal Client Secret."
-            },
-            "type": "securestring"
         },
         "osType": {
             "type": "string",
@@ -80,15 +62,9 @@
                 "azure",
                 "kubenet"
             ],
+			"defaultValue": "kubenet",
             "metadata": {
                 "description": "Network plugin used for building Kubernetes network."
-            }
-        },
-        "maxPods": {
-            "type": "int",
-            "defaultValue": 30,
-            "metadata": {
-                "description": "Maximum number of pods that can run on a node."
             }
         },
         "enableRBAC": {
@@ -98,80 +74,11 @@
                 "description": "Boolean flag to turn on and off of RBAC."
             }
         },
-        "vmssNodePool": {
-            "type": "bool",
-            "defaultValue": false,
-            "metadata": {
-                "description": "Boolean flag to turn on and off of VM scale sets"
-            }
-        },
-        "windowsProfile": {
-            "type": "bool",
-            "defaultValue": false,
-            "metadata": {
-                "description": "Boolean flag to turn on and off of VM scale sets"
-            }
-        },
-        "enablePrivateCluster": {
-            "type": "bool",
-            "defaultValue": false,
-            "metadata": {
-                "description": "Enable private network access to the Kubernetes cluster."
-            }
-        },
-        "aadSessionKey": {
-            "type": "securestring",
-            "defaultValue": ""
-        },
         "enableHttpApplicationRouting": {
             "type": "bool",
-            "defaultValue": true,
+            "defaultValue": false,
             "metadata": {
                 "description": "Boolean flag to turn on and off of http application routing."
-            }
-        },
-        "enableOmsAgent": {
-            "type": "bool",
-            "defaultValue": true,
-            "metadata": {
-                "description": "Boolean flag to turn on and off of omsagent addon."
-            }
-        },
-        "workspaceRegion": {
-            "type": "string",
-            "defaultValue": "East US",
-            "metadata": {
-                "description": "Specify the region for your OMS workspace."
-            }
-        },
-        "workspaceName": {
-            "type": "string",
-            "metadata": {
-                "description": "Specify the name of the OMS workspace."
-            }
-        },
-        "omsWorkspaceId": {
-            "type": "string",
-            "metadata": {
-                "description": "Specify the resource id of the OMS workspace."
-            }
-        },
-        "omsSku": {
-            "type": "string",
-            "defaultValue": "standalone",
-            "allowedValues": [
-                "free",
-                "standalone",
-                "pernode"
-            ],
-            "metadata": {
-                "description": "Select the SKU for your workspace."
-            }
-        },
-        "principalId": {
-            "type": "string",
-            "metadata": {
-                "description": "The objectId of service principal."
             }
         }
     },
