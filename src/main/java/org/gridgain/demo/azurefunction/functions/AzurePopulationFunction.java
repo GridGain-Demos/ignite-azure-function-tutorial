@@ -37,7 +37,7 @@ import org.apache.ignite.configuration.ClientConfiguration;
 /**
  * An Azure Function with HTTP Trigger template.
  */
-public class PopulationFunction {
+public class AzurePopulationFunction {
 
     /**
      * The Azure Function that listens at endpoint "/api/population" and processes two types of requests.

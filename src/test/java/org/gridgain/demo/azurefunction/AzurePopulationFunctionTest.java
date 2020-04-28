@@ -1,7 +1,7 @@
 package org.gridgain.demo.azurefunction;
 
 import com.microsoft.azure.functions.*;
-import org.gridgain.demo.azurefunction.functions.PopulationFunction;
+import org.gridgain.demo.azurefunction.functions.AzurePopulationFunction;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 /**
  * Unit test for Function class.
  */
-public class PopulationFunctionTest {
+public class AzurePopulationFunctionTest {
     /**
      * Unit test for HttpTriggerJava method.
      */
@@ -46,7 +46,7 @@ public class PopulationFunctionTest {
         doReturn(Logger.getGlobal()).when(context).getLogger();
 
         // Invoke
-        final HttpResponseMessage ret = new PopulationFunction().run(req, context);
+        final HttpResponseMessage ret = new AzurePopulationFunction().run(req, context);
 
         // Verify
         assertEquals(ret.getStatus(), HttpStatus.OK);
