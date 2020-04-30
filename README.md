@@ -1,6 +1,6 @@
 # Serverless Computing With Apache Ignite and Azure Functions
 
-This demo is a sample project you need to use for this step-by-step tutorial:
+This demo is a sample project you need to use for the following step-by-step tutorial:
 https://www.gridgain.com/docs/tutorials/serverless/azure_functions_tutorial
 
 The tutorial shows how to develop a serverless Azure Function that uses Apache Ignite in-memory computing platform as a
